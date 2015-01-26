@@ -1,7 +1,11 @@
 __author__ = 'Mordigan'
 import paramiko
 
-class ssh_connection:
+
+class SshConnection:
+    def __init__(self):
+        pass
+
     def open_connection(self, username, password, hostname, timeout):
         ssh = paramiko.SSHClient()
         ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())
