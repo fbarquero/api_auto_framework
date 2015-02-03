@@ -10,7 +10,7 @@ from connection import ssh_connect
 class base_test(unittest.TestCase):
 
     def setUp(self):
-        self._ssh_connection = ssh_connect.ssh_connection()
+        self._ssh_connection = ssh_connect.SshConnection()
         self.ssh_session = self._ssh_connection.open_connection('root', 'meds22', '10.111.2.13', 30)
 
     def tearDown(self):
