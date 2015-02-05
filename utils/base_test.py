@@ -13,6 +13,7 @@ class base_test(unittest.TestCase):
         self._ssh_connection = ssh_connect.SshConnection()
         self.ssh_session = self._ssh_connection.open_connection('root', 'meds22', '10.111.2.13', 30)
 
+
     def tearDown(self):
         self._ssh_connection.close_ssh_connection(self.ssh_session)
 
