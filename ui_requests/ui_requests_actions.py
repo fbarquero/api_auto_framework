@@ -16,3 +16,9 @@ class UiRequestAction:
         r = session.post(url, data=json.dumps(payload), verify=False, stream=False)
         print session.headers
         print r.text
+        return session
+
+    def check_if_service_in_ui(self, services):
+        session = self.authentify()
+
+
