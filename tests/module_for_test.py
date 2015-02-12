@@ -39,16 +39,16 @@ class testing(base_test.base_test):
         time.sleep(5)
         print "sleeped 10s"
 
-def suite():
-    """
-    Construct a test suite
-    """
-    test_suite = unittest.TestSuite()
-    test_suite.addTest(unittest.makeSuite(testing))
-    return test_suite
+#def suite():
+#    """
+#    Construct a test suite
+#    """
+#    test_suite = unittest.TestSuite()
+#    test_suite.addTest(unittest.makeSuite(testing))
+#    return test_suite
 
-runner = unittest.TextTestRunner()
-runner.run(suite())
+#runner = unittest.TextTestRunner()
+#runner.run(suite())
 
 
 
