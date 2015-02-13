@@ -12,7 +12,6 @@ class SshConnection:
     #     self.ssh.connect(hostname, username=username, password=password, timeout=timeout)
 
     def run_cmd(self, command, timeout=15):
-
         username = 'root'
         password = 'meds22'
         hostname = '10.111.2.214'
