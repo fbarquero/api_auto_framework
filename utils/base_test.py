@@ -10,10 +10,14 @@ class BaseTest(unittest.TestCase):
     _multiprocess_can_split_ = True
     #_multiprocess_shared_ = True
 
-    def setUp(self):
-        self.ssh_connection = SshConnection()
+    # def setUp(self):
+    #     pass
+    #
+    # def tearDown(self):
+    #     #TODO add try exept
+    #     pass
+    #     # try:
+    #     #     self.ssh_connection.close_ssh_connection()
+    #     # except Exception:
+    #     #     pass
 
-
-    def tearDown(self):
-        #TODO add try exept
-        self.ssh_connection.close_ssh_connection()

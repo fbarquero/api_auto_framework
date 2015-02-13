@@ -1,3 +1,5 @@
+from nose.tools import timed
+
 __author__ = 'it'
 
 import time
@@ -11,27 +13,51 @@ import unittest
 #@unittest.skip("testing the skip functionality")
 class Testing(BaseTest):
     def test_1(self):
-        serviced = ServiceServiced(self.ssh_connection)
+        # print 'algo'
+        # time.sleep(5)
+        # print 'sleep 5'
+        serviced = ServiceServiced()
         print serviced.service_list()
+        time.sleep(6)
+        print "sleeped 10s"
 
 
     def test_2(self):
-        serviced = ServiceServiced(self.ssh_connection)
-        print serviced.service_status()
+        # print 'algo'
+        # time.sleep(5)
+        # print 'sleep 5'
+        serviced = ServiceServiced()
+        print serviced.service_list()
+        time.sleep(6)
+        print "sleeped 10s"
+        # serviced = ServiceServiced(self.ssh_connection)
+        # print serviced.service_status()
 
     def test_3(self):
-        self.ssh_connection.run_cmd('ps -A x |grep sshd |grep -v grep', 30)
-        time.sleep(5)
+        # print 'algo'
+        time.sleep(6)
+        # print 'sleep 5'
+
+        serviced = ServiceServiced()
+        print serviced.service_status()
+        time.sleep(6)
         print "sleeped 10s"
 
     def test_4(self):
-        self.ssh_connection.run_cmd('ps -A x |grep sshd |grep -v grep', 30)
-        time.sleep(5)
+        # print 'algo'
+        # time.sleep(5)
+        # print 'sleep 5'
+
+        serviced = ServiceServiced()
+        print serviced.service_status()
+        time.sleep(6)
         print "sleeped 10s"
 
     def test_5(self):
-        self.ssh_connection.run_cmd('ps -A x |grep sshd |grep -v grep', 30)
-        time.sleep(5)
+        # print 'algo'
+        # time.sleep(5)
+        # print 'sleep 5'
+        time.sleep(6)
         print "sleeped 10s"
 
 #def suite():
