@@ -1,41 +1,36 @@
 __author__ = 'it'
 
-from utils.base_test import BaseTest
 import time
+
+from utils.base_test import BaseTest
+from cmd_interactions.serviced.service.serviced_service import ServiceServiced
 
 import unittest
 
-#TODO preguntarle a rodo si cada vez que un proceso de nose arranca crea una nueva instancia de testing o simplemente utiliza la actual e inicia nuevas ejecuciones sin independizar el self.
+
 #@unittest.skip("testing the skip functionality")
 class Testing(BaseTest):
     def test_1(self):
-        stdin, stdout, stderr = self.ssh_session.exec_command('ps -A x |grep sshd |grep -v grep')
-        print stdout.readlines()
-        time.sleep(5)
-        print "sleeped 10s"
-        self.assert_(5 == 4, msg="text")
+        serviced = ServiceServiced(self.ssh_connection)
+        print serviced.service_list()
+
 
     def test_2(self):
-        stdin, stdout, stderr = self.ssh_session.exec_command('ps -A x |grep sshd |grep -v grep')
-        print stdout.readlines()
-        time.sleep(5)
-        print "sleeped 10s"
+        serviced = ServiceServiced(self.ssh_connection)
+        print serviced.service_status()
 
     def test_3(self):
-        stdin, stdout, stderr = self.ssh_session.exec_command('ps -A x |grep sshd |grep -v grep')
-        print stdout.readlines()
+        self.ssh_connection.run_cmd('ps -A x |grep sshd |grep -v grep', 30)
         time.sleep(5)
         print "sleeped 10s"
 
     def test_4(self):
-        stdin, stdout, stderr = self.ssh_session.exec_command('ps -A x |grep sshd |grep -v grep')
-        print stdout.readlines()
+        self.ssh_connection.run_cmd('ps -A x |grep sshd |grep -v grep', 30)
         time.sleep(5)
         print "sleeped 10s"
 
     def test_5(self):
-        stdin, stdout, stderr = self.ssh_session.exec_command('ps -A x |grep sshd |grep -v grep')
-        print stdout.readlines()
+        self.ssh_connection.run_cmd('ps -A x |grep sshd |grep -v grep', 30)
         time.sleep(5)
         print "sleeped 10s"
 

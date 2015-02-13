@@ -1,8 +1,7 @@
 __author__ = 'it'
 import paramiko
 import ntpath
-import os
-from connection import ssh_connect
+
 
 #TODO set user password, paramiko log and host as params in config file
 class Sftp:

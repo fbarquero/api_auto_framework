@@ -2,14 +2,40 @@ __author__ = 'it'
 
 
 class ServiceServiced:
-    def __init__(self):
-        pass
+    def __init__(self, ssh):
+        self.ssh = ssh
 
     def service_list(self):
-        pass
+        """
+        List the services deployed in a Control Center application
+        :param ssh:
+        :return service_list JSON:
+        """
+        service_list = {}
+        output = self.ssh.run_cmd('serviced service list', 30)[1:]
+        for line in output:
+            l = filter(None, line.split('\t'))
+            service_list[l[0].strip()] = dict(ID=l[1].strip())
+        return service_list
+
 
     def service_status(self):
-        pass
+        """
+        Get service status, ServiceID, Host, DockerID
+        :param ssh:
+        :return service_status JSON:
+        """
+        service_status = {}
+        output = self.ssh.run_cmd('serviced service status', 30)[1:]
+        for line in output:
+            l = filter(None, line.split('\t'))
+            if 'Running' not in line:
+                service_status[l[0].strip()] = dict(ID=l[1].strip(), STATUS=l[2].strip(), HOST='', DOCKERID='')
+            else:
+                service_status[l[0].strip()] = dict(ID=l[1].strip(), STATUS=l[2].strip(), HOST=l[4].strip(), DOCKERID=l[6].strip())
+
+        return service_status
+
 
     def service_add(self):
         pass
