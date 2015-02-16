@@ -4,9 +4,6 @@ from connection.ssh_connect import SshConnection
 
 
 class ServiceServiced:
-    def __init__(self):
-        # self._ssh_conn = None
-        self._ssh_conn=SshConnection()
 
     def service_list(self):
         """
@@ -15,8 +12,9 @@ class ServiceServiced:
         :return service_list JSON:
         """
         service_list = {}
-        # self._ssh_conn = SshConnection()
-        output = self._ssh_conn.run_cmd('serviced service list', 30)[1:]
+
+        with SshConnection() as _ssh_conn:
+            output = _ssh_conn.run_cmd('serviced service list', 30)[1:]
         for line in output:
             l = filter(None, line.split('\t'))
             service_list[l[0].strip()] = dict(ID=l[1].strip())
@@ -30,7 +28,8 @@ class ServiceServiced:
         """
         # self._ssh_conn = SshConnection()
         service_status = {}
-        output = self._ssh_conn.run_cmd('serviced service status', 30)[1:]
+        with SshConnection() as _ssh_conn:
+            output = _ssh_conn.run_cmd('serviced service list', 30)[1:]
         for line in output:
             l = filter(None, line.split('\t'))
             if 'Running' not in line:
