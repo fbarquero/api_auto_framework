@@ -1,4 +1,4 @@
-__author__ = 'it'
+__author__ = 'fbarquero'
 
 
 class ServicedHosts:

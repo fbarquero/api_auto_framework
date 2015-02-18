@@ -3,29 +3,29 @@ __author__ = 'Mordigan'
 import requests
 import json
 
+from utils.framework_configs import GlobalConstants as GC
+
 
 class UiRequestAction:
     def __init__(self):
-        pass
+        self.session = None
 
-    def authentify(self):
-        payload = dict(username='root', password='meds22')
-        url = "https://10.111.2.214/login"
-        session = requests.Session()
-        r = session.post(url, data=json.dumps(payload), verify=False, stream=False)
-        print session.headers
-        print r.text
-        return session
+    def __enter__(self):
+        payload = dict(username=GC.USERNAME, password=GC.PASSWORD)
+        self.session = requests.Session()
+        self.session.post("%s%s" % (GC.CC_URL, '/login'), data=json.dumps(payload), verify=False, stream=False)
+        return self
 
-    def get_hosts_in_ui(self):
-        session = self.authentify()
-        # 1423642201
-        url = "https://10.111.2.214/hosts"
-        payload = {'time': '1423642201'}
-        r = session.get(url, params=payload)
-        print session.headers
-        print r.text
+    def __exit__(self, exc_type, exc_val, exc_tb):
+        self.session.close()
 
+    def get_hosts_in_ui(self, timestamp):
+        payload = dict(time=timestamp)
+        r = self.session.get("%s%s" % (GC.CC_URL, '/hosts'), params=payload)
+        return r.text
+
+with UiRequestAction as r:
+    r.get_hosts_in_ui()
 # uiRequest=UiRequestAction()
 # uiRequest.get_hosts_in_ui()
 

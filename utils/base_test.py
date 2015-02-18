@@ -1,4 +1,4 @@
-__author__ = 'Mordigan'
+__author__ = 'fbarquero'
 
 #url = http://segfault.in/2010/03/paramiko-ssh-and-sftp-with-python/
 import unittest
@@ -11,13 +11,8 @@ class BaseTest(unittest.TestCase):
     #_multiprocess_shared_ = True
 
     # def setUp(self):
-    #     pass
     #
-    # def tearDown(self):
-    #     #TODO add try exept
     #     pass
-    #     # try:
-    #     #     self.ssh_connection.close_ssh_connection()
-    #     # except Exception:
-    #     #     pass
 
+    # def tearDown(self):
+    # check https://pypi.python.org/pypi/nose_xunitmp/0.2

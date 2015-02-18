@@ -1,11 +1,11 @@
 from nose.tools import timed
 
-__author__ = 'it'
+__author__ = 'fbarquero'
 
 import time
 
 from utils.base_test import BaseTest
-from cmd_interactions.serviced.service.serviced_service import ServiceServiced
+from cmd_interactions.serviced.service.serviced_service import ServicedService
 
 import unittest
 
@@ -16,17 +16,18 @@ class Testing(BaseTest):
         # print 'algo'
         # time.sleep(5)
         # print 'sleep 5'
-        serviced = ServiceServiced()
+        serviced = ServicedService()
         print serviced.service_list()
         time.sleep(6)
         print "sleeped 10s"
+        self.assertEqual(1,2,msg="fallo porque 1 no es igual a 2")
 
 
     def test_2(self):
         # print 'algo'
         # time.sleep(5)
         # print 'sleep 5'
-        serviced = ServiceServiced()
+        serviced = ServicedService()
         print serviced.service_list()
         time.sleep(6)
         print "sleeped 10s"
@@ -38,7 +39,7 @@ class Testing(BaseTest):
         time.sleep(6)
         # print 'sleep 5'
 
-        serviced = ServiceServiced()
+        serviced = ServicedService()
         print serviced.service_status()
         time.sleep(6)
         print "sleeped 10s"
@@ -48,7 +49,7 @@ class Testing(BaseTest):
         # time.sleep(5)
         # print 'sleep 5'
 
-        serviced = ServiceServiced()
+        serviced = ServicedService()
         print serviced.service_status()
         time.sleep(6)
         print "sleeped 10s"

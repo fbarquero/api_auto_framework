@@ -3,12 +3,11 @@ __author__ = 'it'
 from connection.ssh_connect import SshConnection
 
 
-class ServiceServiced:
+class ServicedService:
 
     def service_list(self):
         """
         List the services deployed in a Control Center application
-        :param ssh:
         :return service_list JSON:
         """
         service_list = {}
@@ -23,7 +22,6 @@ class ServiceServiced:
     def service_status(self):
         """
         Get service status, ServiceID, Host, DockerID
-        :param ssh:
         :return service_status JSON:
         """
         # self._ssh_conn = SshConnection()
