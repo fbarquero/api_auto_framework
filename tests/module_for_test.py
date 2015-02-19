@@ -23,43 +23,43 @@ class Testing(BaseTest):
         self.assertEqual(1,2,msg="fallo porque 1 no es igual a 2")
 
 
-    def test_2(self):
-        # print 'algo'
-        # time.sleep(5)
-        # print 'sleep 5'
-        serviced = ServicedService()
-        print serviced.service_list()
-        time.sleep(6)
-        print "sleeped 10s"
-        # serviced = ServiceServiced(self.ssh_connection)
-        # print serviced.service_status()
-
-    def test_3(self):
-        # print 'algo'
-        time.sleep(6)
-        # print 'sleep 5'
-
-        serviced = ServicedService()
-        print serviced.service_status()
-        time.sleep(6)
-        print "sleeped 10s"
-
-    def test_4(self):
-        # print 'algo'
-        # time.sleep(5)
-        # print 'sleep 5'
-
-        serviced = ServicedService()
-        print serviced.service_status()
-        time.sleep(6)
-        print "sleeped 10s"
-
-    def test_5(self):
-        # print 'algo'
-        # time.sleep(5)
-        # print 'sleep 5'
-        time.sleep(6)
-        print "sleeped 10s"
+    # def test_2(self):
+    #     # print 'algo'
+    #     # time.sleep(5)
+    #     # print 'sleep 5'
+    #     serviced = ServicedService()
+    #     print serviced.service_list()
+    #     time.sleep(6)
+    #     print "sleeped 10s"
+    #     # serviced = ServiceServiced(self.ssh_connection)
+    #     # print serviced.service_status()
+    #
+    # def test_3(self):
+    #     # print 'algo'
+    #     time.sleep(6)
+    #     # print 'sleep 5'
+    #
+    #     serviced = ServicedService()
+    #     print serviced.service_status()
+    #     time.sleep(6)
+    #     print "sleeped 10s"
+    #
+    # def test_4(self):
+    #     # print 'algo'
+    #     # time.sleep(5)
+    #     # print 'sleep 5'
+    #
+    #     serviced = ServicedService()
+    #     print serviced.service_status()
+    #     time.sleep(6)
+    #     print "sleeped 10s"
+    #
+    # def test_5(self):
+    #     # print 'algo'
+    #     # time.sleep(5)
+    #     # print 'sleep 5'
+    #     time.sleep(6)
+    #     print "sleeped 10s"
 
 #def suite():
 #    """
