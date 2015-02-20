@@ -3,7 +3,7 @@ __author__ = 'fbarquero'
 
 class GlobalConstants:
     #Master config info
-    HOSTNAME = '10.111.2.214'
+    HOSTNAME = '10.111.2.112'
     USERNAME = 'root'
     PASSWORD = 'meds22'
     CC_URL = 'https://%s' % HOSTNAME
