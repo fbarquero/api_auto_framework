@@ -41,8 +41,13 @@ class ServicedService:
     def service_add(self):
         pass
 
-    def service_remove(self):
-        pass
+    def service_remove(self, service):
+        with SshConnection() as _ssh_conn:
+            output = _ssh_conn.run_cmd('serviced service remove %s' % service)
+        if service in output:
+            return True
+        else:
+            return False
 
     def service_edit(self):
         pass
@@ -50,7 +55,9 @@ class ServicedService:
     def service_assign_ip(self):
         pass
 
-    def service_start(self):
+    def service_start(self, service):
+        with SshConnection() as _ssh_conn:
+            output = _ssh_conn.run_cmd('serviced service add')
         pass
 
     def service_restart(self):

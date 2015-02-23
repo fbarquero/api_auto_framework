@@ -19,10 +19,6 @@ class UiRequestAction:
     def __exit__(self, exc_type, exc_val, exc_tb):
         self.session.close()
 
-    def get_hosts_in_ui(self, timestamp):
-        payload = dict(time=timestamp)
-        r = self.session.get("%s%s" % (GC.CC_URL, '/hosts'), params=payload)
-        return r.text
 
 # with UiRequestAction as r:
 #     r.get_hosts_in_ui()
