@@ -14,16 +14,16 @@ from connection.ssh_connect import SshConnection
 
 class BaseTest(unittest.TestCase, TextTestRunner):
     _multiprocess_can_split_ = True
-    results= None
-    #_multiprocess_shared_ = True
-
-    # def setUp(self):
+    # results= None
+    # #_multiprocess_shared_ = True
     #
-    #     pass
-
-
-    def tearDown(self):
-        print 'algo'
-
-
+    # # def setUp(self):
+    # #
+    # #     pass
+    #
+    #
+    # def tearDown(self):
+    #     print 'algo'
+    #
+    #
 

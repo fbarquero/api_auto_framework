@@ -24,10 +24,10 @@ class UiRequestAction:
         r = self.session.get("%s%s" % (GC.CC_URL, '/hosts'), params=payload)
         return r.text
 
-with UiRequestAction as r:
-    r.get_hosts_in_ui()
-# uiRequest=UiRequestAction()
-# uiRequest.get_hosts_in_ui()
-
-
+# with UiRequestAction as r:
+#     r.get_hosts_in_ui()
+# # uiRequest=UiRequestAction()
+# # uiRequest.get_hosts_in_ui()
+#
+#
 
