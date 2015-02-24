@@ -19,11 +19,17 @@ class UiRequestAction:
     def __exit__(self, exc_type, exc_val, exc_tb):
         self.session.close()
 
+    def get(self, url, payload):
+        r = self.session.get(url, params=payload)
+        return r.text
 
-# with UiRequestAction as r:
-#     r.get_hosts_in_ui()
-# # uiRequest=UiRequestAction()
-# # uiRequest.get_hosts_in_ui()
+
+
+with UiRequestAction() as r:
+    json_response = json.loads(r.get("%s%s" % (GC.CC_URL, '/hosts'), payload=dict(time='1424793514')))
+    print 'algo'
+
+
 #
 #
 

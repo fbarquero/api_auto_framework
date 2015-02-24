@@ -38,8 +38,5 @@ class Sftp:
 
 
 
-#sftp = Sftp()
-#sftp.get_files(["../../utils/service_files/test.txt"], "/tmp/")
-#sftp.get_files(["/tmp/test1.sh", "/tmp/test2.sh"], "../../downloads/")
-
-
+# with Sftp() as _sftp_conn:
+#     _sftp_conn.get_files(remote_files=['/tmp/a.txt','/tmp/b.txt'], destination_path='c:/temp')

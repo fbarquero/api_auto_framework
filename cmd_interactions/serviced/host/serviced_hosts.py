@@ -13,8 +13,9 @@ class ServicedHosts:
 
     def serviced_host_list_ui(self, timestamp):
         payload = dict(time=timestamp)
-        r = self.session.get("%s%s" % (GC.CC_URL, '/hosts'), params=payload)
-        return r.text
+        with UiRequestAction() as _session:
+            r = _session.get("%s%s" % (GC.CC_URL, '/hosts'), payload)
+        return r
 
     def serviced_host_remove(self):
         pass

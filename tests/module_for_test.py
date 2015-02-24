@@ -1,5 +1,3 @@
-from nose.tools import timed
-
 __author__ = 'fbarquero'
 
 import time
@@ -7,71 +5,42 @@ import time
 from utils.base_test import BaseTest
 from cmd_interactions.serviced.service.serviced_service import ServicedService
 
-import unittest
 
 
-#@unittest.skip("testing the skip functionality")
 class Testing(BaseTest):
-    def test_1(self):
-        # print 'algo'
-        # time.sleep(5)
-        # print 'sleep 5'
+    def test_zenoss_can_start(self):
+        """
+        Given: Just one Zenoss application was deployed, it is currently on stopped status
+        When: User starts Zenoss deployed app
+        Then: Zenoss status of all daemons are "Running"
+        """
+        #Instances section
         serviced = ServicedService()
-        print serviced.service_list()
-        time.sleep(6)
-        print "sleeped 10s"
-        self.assertEqual(1,2,msg="fallo porque 1 no es igual a 2")
-
+        #Start Zenoss app
+        started = serviced.service_start('Zenoss.resmgr')
+        self.assertTrue(msg='Unable to start the service')
+        self.assertTrue(serviced.is_zenoss_running(), msg='Zenoss did not started correctly')
 
     def test_2(self):
-        # print 'algo'
-        # time.sleep(5)
-        # print 'sleep 5'
-        serviced = ServicedService()
-        print serviced.service_list()
-        time.sleep(6)
-        print "sleeped 10s"
-        # serviced = ServiceServiced(self.ssh_connection)
-        # print serviced.service_status()
+        print 'test number 2 intended to fail'
+        time.sleep(10)
+        self.assertTrue(False, msg='Expected failure on test 2')
 
     def test_3(self):
-        # print 'algo'
-        time.sleep(6)
-        # print 'sleep 5'
-
-        serviced = ServicedService()
-        print serviced.service_status()
-        time.sleep(6)
-        print "sleeped 10s"
+        print 'test number 3 intended to fail'
+        time.sleep(10)
+        self.assertTrue(False, msg='Expected failure on test 3')
 
     def test_4(self):
-        # print 'algo'
-        # time.sleep(5)
-        # print 'sleep 5'
-
-        serviced = ServicedService()
-        print serviced.service_status()
-        time.sleep(6)
-        print "sleeped 10s"
+        print 'test number 4 intended to PASS'
+        time.sleep(10)
+        self.assertTrue(True, msg='Expected failure on test 4')
 
     def test_5(self):
-        # print 'algo'
-        # time.sleep(5)
-        # print 'sleep 5'
-        time.sleep(6)
-        print "sleeped 10s"
-
-#def suite():
-#    """
-#    Construct a test suite
-#    """
-#    test_suite = unittest.TestSuite()
-#    test_suite.addTest(unittest.makeSuite(testing))
-#    return test_suite
-
-#runner = unittest.TextTestRunner()
-#runner.run(suite())
-
+        print 'test number 4 intended to Have an error'
+        time.sleep(5)
+        divide = 1 / 0
+        self.assertTrue(False, msg='Expected failure on test 4')
 
 
 

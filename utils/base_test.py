@@ -8,11 +8,9 @@ __author__ = 'fbarquero'
 # http://stackoverflow.com/questions/14077299/how-to-make-nose-to-log-output-of-cases-to-separate-files
 # http://stackoverflow.com/questions/4414234/getting-pythons-unittest-results-in-a-teardown-method/4415062#4415062
 import unittest
-from nose.core import TextTestRunner
-from connection.ssh_connect import SshConnection
 
 
-class BaseTest(unittest.TestCase, TextTestRunner):
+class BaseTest(unittest.TestCase):
     _multiprocess_can_split_ = True
     # results= None
     # #_multiprocess_shared_ = True
