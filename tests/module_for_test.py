@@ -1,24 +1,25 @@
 __author__ = 'fbarquero'
 
 import time
-
+import unittest
+import multiprocessing
 from utils.base_test import BaseTest
 from cmd_interactions.serviced.service.serviced_service import ServicedService
 
 
 
-class Testing(BaseTest):
+class Testing(unittest.TestCase):
     def test_zenoss_can_start(self):
         """
         Given: Just one Zenoss application was deployed, it is currently on stopped status
         When: User starts Zenoss deployed app
         Then: Zenoss status of all daemons are "Running"
         """
-        #Instances section
+        #Instance creation section
         serviced = ServicedService()
-        #Start Zenoss app
-        started = serviced.service_start('Zenoss.resmgr')
-        self.assertTrue(msg='Unable to start the service')
+        #Try to start zenoss
+        self.assertTrue(serviced.service_start('Zenoss.resmgr'),msg='Unable to start the service')
+        #Check if zenoss started as expected
         self.assertTrue(serviced.is_zenoss_running(), msg='Zenoss did not started correctly')
 
     def test_2(self):

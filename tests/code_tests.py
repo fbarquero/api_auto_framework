@@ -5,29 +5,14 @@
 #         result = nose.run(argv=['nosetests', 'test_name.py', '-v'])
 #         print result
 
-service_status = {}
-service_status['RESULTS']=''
-service_status['RESULTS']['PASS'] = ''
-service_status['RESULTS']['ERROR'] = ''
-service_status['RESULTS']['SKIPPED'] = ''
-service_status['RESULTS']['FAILED'] = ''
-
-# xml=['x', 'y', 'z']
-# #lectura de cada nodo
-# for node in xml:
-#     if 1 == 1:
-#         service_status['FAILED'][node].append(dict(tc_name="name", time="time"))
-#
-# for node in xml:
-#     if 1 == 1:
-#         service_status['FAILED'][node].append(dict(tc_name="name", time="time"))
-
-#
-# elif error:
-#     pass
-# elif skipped:
-#     pass
-# else:
-#     passed
-
-print service_status
+# service_status = {'RESULTS': {'PASS': {}, 'FAILED': {}, 'SKIPPED': {}, 'ERROR': {}}}
+# class_name='clasname1'
+# key_exist = False
+# key_name = 'classname1'
+# for i in range(2):
+#     if key_exist:
+#         service_status['RESULTS']['PASS'][key_name].append(dict(tc_name='name', time='0.000s'))
+#     else:
+#         service_status['RESULTS']['PASS'][key_name] = []
+#         service_status['RESULTS']['PASS'][key_name].append(dict(tc_name='name', time='0.000s'))
+#         key_exist = True

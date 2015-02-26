@@ -9,7 +9,7 @@ import unittest
 
 
 #@unittest.skip("testing the skip functionality")
-class Testing(BaseTest):
+class Testing(unittest.TestCase):
     def test_1(self):
         time.sleep(2)
         self.assertTrue(True)
